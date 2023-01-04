@@ -1,6 +1,7 @@
 import _ from 'lodash';
-import './style.css';
+import './style.scss';
 import Icon from './webpack-icon.svg';
+import Data from './data.json5';
 
 function component() {
   const element = document.createElement('div');
@@ -13,6 +14,8 @@ function component() {
 	myIcon.src = Icon;
 
 	element.appendChild(myIcon);
+
+	console.log(Data.body);
 
   return element;
 }
