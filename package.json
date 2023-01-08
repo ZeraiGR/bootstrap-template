@@ -1,13 +1,12 @@
 {
-  "name": "my-start-template",
+  "name": "webpack-ts-start-template",
   "version": "1.0.0",
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack --progress",
-    "dev": "webpack serve --open",
-    "watch": "webpack --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --progress --config webpack.prod.js",
+    "dev": "webpack serve --open --config webpack.dev.js",
+    "watch": "webpack --watch --config webpack.dev.js"
   },
   "keywords": [
     "webpack",
@@ -26,6 +25,7 @@
     "fork-ts-checker-webpack-plugin": "^7.2.14",
     "html-webpack-plugin": "^5.5.0",
     "json5": "^2.2.3",
+    "mini-css-extract-plugin": "^2.7.2",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
     "postcss-preset-env": "^7.8.3",
@@ -36,7 +36,8 @@
     "typescript": "^4.9.4",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
