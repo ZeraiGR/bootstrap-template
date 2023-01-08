@@ -1,3 +1,7 @@
+$font-color: lch(53 105 40);
+$red: rgb(182, 110, 110);
+$font-size: 1rem;
+
 @font-face {
   font-family: 'Montserrat';
   src: url('./Montserrat-Regular.woff2') format('woff2'),
@@ -6,13 +10,8 @@
   font-style: normal;
 }
 
-$font-size: 1rem;
-$font-color: lch(53 105 40);
-$red: rgb(182, 110, 110);
-
 .hello {
   color: $font-color;
 	font-size: $font-size;
 	font-family: 'Montserrat', sans-serif;
-	background-image: url('./webpack-icon.svg');
 }

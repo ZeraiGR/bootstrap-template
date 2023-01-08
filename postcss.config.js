@@ -5,5 +5,3 @@ module.exports = {
         },
     },
 }
-
-// npm install postcss-preset-env --save-dev

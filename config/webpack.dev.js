@@ -7,6 +7,8 @@ module.exports = merge(common, {
 	devtool: 'eval-cheap-module-source-map',
 	devServer: {
 		static: './dist',
+		// hot: true,
+		// port: 8080,
 	},
 	watchOptions: {
 		ignored: /node_modules/,

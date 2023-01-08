@@ -1,12 +1,10 @@
-const path = require('path');
-const json5 = require('json5');
-
 module.exports = (env) => {
 	
 	return {
 		output: {
 			filename: '[name].[contenthash].js',
 			path: path.resolve(__dirname, 'dist'),
+			publicPath: '/',
 			clean: true,
 		},
 		module: {

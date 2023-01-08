@@ -1,0 +1,7 @@
+{
+	// This comment is available because of json5 extension is used
+	"to": "User",
+	"from": "Kirill",
+	"heading": "Greeting",
+	"body": "Happy codding!"
+}
