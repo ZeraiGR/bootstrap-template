@@ -4,13 +4,13 @@ $font-size: 1rem;
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('./Montserrat-Regular.woff2') format('woff2'),
-    url('./Montserrat-Regular.woff') format('woff');
+  src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+    url('../fonts/Montserrat-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
-.hello {
+body {
   color: $font-color;
 	font-size: $font-size;
 	font-family: 'Montserrat', sans-serif;

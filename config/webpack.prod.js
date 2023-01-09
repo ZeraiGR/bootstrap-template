@@ -1,31 +1,49 @@
 const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
+const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
 	mode: 'production',
 	devtool: 'source-map',
+	output: {
+		filename: '[name].[contenthash].bundle.js',
+		publicPath: './',
+	},
 	module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        test: /\.(sass|scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              sourceMap: false,
+              modules: false,
+            },
+          },
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
     ],
   },
-	plugins: [new MiniCssExtractPlugin()],
+	plugins: [
+		new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash].css',
+      chunkFilename: '[id].css'
+		}),
+	],
 	optimization: {
-		moduleIds: 'deterministic',
-		runtimeChunk: 'single',
-		splitChunks: {
-			cacheGroups: {
-				vendor: {
-					test: /[\\/]node_modules[\\/]/,
-					name: 'vendors',
-					chunks: 'all',
-				},
-			},
-		},
-		// https://bundlers.tooling.report/code-splitting/multi-entry/
+		minimize: true,
+    minimizer: [new CssMinimizerPlugin(), '...'],
 	},
+	performance: {
+    hints: 'warning',
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  }
 });

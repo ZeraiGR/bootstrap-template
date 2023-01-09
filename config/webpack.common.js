@@ -11,7 +11,7 @@ module.exports = {
 	},
 	output: {
 		filename: '[name].bundle.js',
-		path: paths.build,
+		path: paths.dist,
 		clean: true,
 		publicPath: '/',
 	},
@@ -34,13 +34,9 @@ module.exports = {
 					parse: json5.parse,
 				},
 			},
-			{ 
-				test: /\.(?:ico|gif|png|jpg|jpeg)$/i, 
-				type: 'asset/resource' 
-			},
-      { 
-				test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, 
-				type: 'asset/inline' 
+			{
+				test: /\.(jpe?g|png|gif|svg|eot|ttf|woff?2)$/i,
+				type: 'asset'
 			},
 		],
 	},
@@ -50,20 +46,20 @@ module.exports = {
         {
           from: paths.public,
           globOptions: {
-            ignore: ['*.DS_Store'],
+            ignore: ['*.DS_Store', '**/template.html'],
           },
           noErrorOnMissing: true,
         },
       ],
     }),
 		new HtmlWebpackPlugin({
-			title: 'Webpack-easy-start-template',
 			template: `${paths.public}/template.html`,
 			filename: 'index.html',
 			templateParameters: {
         author: 'Kirill Gruzdev',
         description: 'Easy Webpack 5 start template for any spa projects',
         keywords: 'webpack, babel, typescript',
+				title: 'Webpack-easy-start-template',
       }
 		}),
 		new Dotenv()

@@ -1,6 +1,5 @@
 import * as _ from 'lodash';
 
-
 import { print } from './print';
 
 export default function () {
@@ -8,7 +7,7 @@ export default function () {
 	print();
 	console.log(process.env.SOME_PASS);
 
-	element.innerHTML = _.join(['Hello', 'webpack))'], ' ');
+	element.innerHTML = _.join(['Hello', 'webpack!!!'], ' ');
 
 	return element;
 }
