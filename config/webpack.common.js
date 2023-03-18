@@ -10,7 +10,7 @@ module.exports = {
 		index: `${paths.src}/index.ts`,
 	},
 	output: {
-		filename: '[name].bundle.js',
+		filename: 'index.js',
 		path: paths.dist,
 		clean: true,
 		publicPath: '/',
