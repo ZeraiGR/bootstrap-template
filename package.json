@@ -64,6 +64,7 @@
     "lodash": "^4.17.21"
   },
   "lint-staged": {
+    "*{.test.js,.test.ts}": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "*{.js,ts}": "eslint --cache --fix --max-warnings=0",
     "*.{js,ts,css,md}": "prettier --write"
   }
