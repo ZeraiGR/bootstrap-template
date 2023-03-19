@@ -7,7 +7,9 @@
   "scripts": {
     "build": "webpack --progress --config config/webpack.prod.js",
     "dev": "webpack serve --open --config config/webpack.dev.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "format:write": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\""
   },
   "keywords": [
     "webpack",
@@ -38,6 +40,7 @@
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
     "postcss-preset-env": "^7.8.3",
+    "prettier": "2.8.4",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",

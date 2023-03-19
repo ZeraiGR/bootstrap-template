@@ -1,3 +1,3 @@
 export const print = (): void => {
-	console.log('printed!');
-}
+  console.log('printed!');
+};
